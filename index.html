@@ -257,5 +257,29 @@ function closeMenu() {
     document.querySelector('.nav').classList.remove('active');
 }
 </script>
+<script>
+function closeMenu() {
+    document.querySelector('.burger').classList.remove('active');
+    document.querySelector('.nav').classList.remove('active');
+}
+
+// Эффект при скролле — только для мобильных
+if (window.matchMedia('(max-width: 768px)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    document.querySelectorAll('.edu-card, .skill-item, .timeline-item, .contact-item')
+        .forEach(el => observer.observe(el));
+}
+</script>
 </body>
 </html>
