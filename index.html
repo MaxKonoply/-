@@ -12,13 +12,17 @@
 <body>
 <header class="header">
     <div class="container header-flex">
-        <div class="logo">МК<span>.</span></div>
+        <button class="burger" aria-label="Меню" onclick="this.classList.toggle('active'); document.querySelector('.nav').classList.toggle('active')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="nav">
-            <a href="#about">Обо мне</a>
-            <a href="#education">Образование</a>
-            <a href="#skills">Навыки</a>
-            <a href="#experience">Опыт</a>
-            <a href="#contacts">Контакты</a>
+            <a href="#about" onclick="closeMenu()">Обо мне</a>
+            <a href="#education" onclick="closeMenu()">Образование</a>
+            <a href="#skills" onclick="closeMenu()">Навыки</a>
+            <a href="#experience" onclick="closeMenu()">Опыт</a>
+            <a href="#contacts" onclick="closeMenu()">Контакты</a>
         </nav>
     </div>
 </header>
@@ -28,16 +32,16 @@
     <section id="about" class="hero">
         <div class="container hero-grid">
             <div class="hero-image">
-                <img src="фото для резюме как фото на паспорт.png" alt="Конотопов Максим" onerror="this.src='https://placehold.co/300x300?text=MK'">
+                <img src="photo.png" alt="Конотопов Максим" onerror="this.src='https://placehold.co/300x300?text=MK'">
             </div>
             <div class="hero-content">
                 <h1>Конотопов Максим Сергеевич</h1>
                 <div class="hero-info">
-                    <span>📅 09.08.2006 - г.р. </span>
-                    <span>📍 Москва, м. Бауманская - местонахождение</span>
+                    <span>📅 09.08.2006 г.р.</span>
+                    <span>📍 Москва, м. Бауманская</span>
                 </div>
                 <p class="description">
-                    <B>Мотивированный студент, </B> нацеленный на развитие и результат. Ищу стажировку, где смогу решать интересные задачи.
+                    <b>Мотивированный студент,</b> нацеленный на развитие и результат. Ищу стажировку, где смогу решать интересные задачи.
                 </p>
                 <div class="hero-cta">
                     <a href="#contacts" class="btn-primary">Связаться</a>
@@ -84,12 +88,12 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-icon">🐍</div>
-                    <h4>Разработка </h4>
+                    <h4>Разработка</h4>
                     <ul class="skill-list">
                         <li>Python (Junior)</li>
                         <li>HTML / CSS (Junior)</li>
                         <li>Prompt Engineering</li>
-                        <li>AI Tools (ChatGPT, Claude, Kimi, Gemini…) </li>
+                        <li>AI Tools (ChatGPT, Claude, Gemini)</li>
                     </ul>
                 </div>
                 <div class="skill-item">
@@ -98,7 +102,7 @@
                     <ul class="skill-list">
                         <li>Linux (UX)</li>
                         <li>1С: Предприятие (Junior)</li>
-                        <li>Сборка ПК </li>
+                        <li>Сборка ПК</li>
                         <li>Диагностика железа</li>
                     </ul>
                 </div>
@@ -119,7 +123,6 @@
         <div class="container">
             <h2 class="section-title">Опыт и проекты</h2>
             <div class="timeline">
-                <!-- Проект 1 -->
                 <div class="timeline-item">
                     <div class="time">Окт 2025 — н. в.</div>
                     <div class="exp-body">
@@ -146,7 +149,6 @@
                     </div>
                 </div>
 
-                <!-- Проект 2 -->
                 <div class="timeline-item">
                     <div class="time">Июль — Окт 2024</div>
                     <div class="exp-body">
@@ -173,7 +175,6 @@
                     </div>
                 </div>
 
-                <!-- Проект 3 -->
                 <div class="timeline-item">
                     <div class="time">Май — Авг 2023</div>
                     <div class="exp-body">
@@ -233,19 +234,28 @@
                 </div>
                 <div class="contact-map">
                     <iframe 
-                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Abfb6b9c3e7e5d5f8e2f6b1c3a4d5e6f7g8h9i0j1k2l3m4n5o6p7&ll=37.679504,55.765949&z=15"
-                    width="100%" height="300" frameborder="0" style="border-radius: 15px; border: 1px solid #e2e8f0;"></iframe>
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3Abfb6b9c3e7e5d5f8e2f6b1c3a4d5e6f7g8h9i0j1k2l3m4n5o6p7&ll=37.679504,55.765949&z=15"
+                        width="100%" 
+                        height="300" 
+                        frameborder="0">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
+</main>
+
 <footer class="footer">
-<div class="container">
-    <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-top: 1px solid #e2e8f0; color: #94a3b8; font-size: 0.85rem;">
+    <div class="container">
         <p>&copy; 2026 Конотопов Максим Сергеевич. Все права защищены.</p>
     </div>
-</div>
 </footer>
-</main>
+
+<script>
+function closeMenu() {
+    document.querySelector('.burger').classList.remove('active');
+    document.querySelector('.nav').classList.remove('active');
+}
+</script>
 </body>
 </html>
