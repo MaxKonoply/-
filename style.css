@@ -522,3 +522,31 @@ body {
         border-color: transparent;
     }
 }
+/* SCROLL ANIMATION — только мобильные */
+@media (max-width: 768px) {
+    .edu-card,
+    .skill-item,
+    .timeline-item,
+    .contact-item {
+        opacity: 0.6;
+        transform: scale(0.95);
+        transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
+    }
+
+    .edu-card.in-view,
+    .skill-item.in-view {
+        opacity: 1;
+        transform: scale(1) translateY(-5px);
+        border-color: var(--primary);
+    }
+
+    .timeline-item.in-view,
+    .contact-item.in-view {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .timeline-item.in-view::before {
+        box-shadow: 0 0 0 4px var(--primary), 0 0 15px rgba(37, 99, 235, 0.4);
+    }
+}
